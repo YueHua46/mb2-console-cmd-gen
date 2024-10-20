@@ -357,7 +357,7 @@ export const categories: Category[] = [
         commands: [
             {
                 name: '添加部队',
-                code: 'campaign.give_troops {troop_id} {amount}',
+                code: 'campaign.add_troops {troop_id} | {amount} | {party_name}',
                 description: '向你的队伍中添加指定的部队。',
                 params: [
                     {
@@ -367,6 +367,7 @@ export const categories: Category[] = [
                         options: troops.map(troop => ({ value: troop.id, label: troop.name })), // 在组件中根据这个选项生成下拉菜单
                     },
                     { key: 'amount', default: '50', label: '部队数量', type: 'number' },
+                    { key: 'party_name', default: '', label: '队伍名称（省略为空时为主队伍）' },
                 ],
             },
             {
