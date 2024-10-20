@@ -20,6 +20,7 @@ export const troops: Troop[] = [
     { culture: '阿塞莱', id: 'aserai_militia_spearman', name: '阿塞莱民兵长矛兵' },
     { culture: '阿塞莱', id: 'aserai_militia_archer', name: '阿塞莱民兵弓箭手' },
     { culture: '阿塞莱', id: 'aserai_tribal_horseman', name: '阿塞莱部族骑兵' },
+    { culture: '阿塞莱', id: 'aserai_vanguard_faris', name: '阿塞莱先锋法里斯' },
 
     // 斯特吉亚部队
     { culture: '斯特吉亚', id: 'sturgian_horse_raider', name: '斯特吉亚骑马袭击者' },
@@ -67,6 +68,7 @@ export const troops: Troop[] = [
     { culture: '库赛特', id: 'khuzait_khans_guard', name: '库赛特可汗卫士' },
 
     // 帝国部队
+    { culture: '帝国', id: 'imperial_elite_cataphract', name: '帝国精英具装骑兵' },
     { culture: '帝国', id: 'imperial_cataphract', name: '帝国铁甲骑兵' },
     { culture: '帝国', id: 'imperial_legionary', name: '帝国军团士兵' },
     { culture: '帝国', id: 'imperial_sergeant_crossbowman', name: '帝国军士弩手' },
