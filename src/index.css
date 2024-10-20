@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: 'Cinzel', serif;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+@layer base {
+  :root {
+    /* 动态选择器颜色 */
+    --picker-dynamic-accent: hsl(var(--background));
+    /* 背景色 */
+    --background: 25, 25%, 50%;
+    /* 文本文本色 */
+    --foreground: 60, 30%, 100%;
+    /* 卡片背景色 */
+    --card: var(--background);
+    /* 卡片文本色 */
+    --card-foreground: var(--foreground);
+    /* 弹出窗口背景色 */
+    --popover: 0 0% 100%;
+    /* 弹出窗口文本色 */
+    --popover-foreground: 0 0% 0%;
+    /* 主要按钮背景色 */
+    --primary: 215 25% 27%;
+    /* 主要按钮文本色 */
+    --primary-foreground: var(--foreground);
+    /* 次要按钮背景色 */
+    --secondary: 0 0% 96.1%;
+    /* 次要按钮文本色 */
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    /* 环形色 */
+    --ring: 0 0% 3.9%;
+    /* 图表颜色1 */
+    --chart-1: 12 76% 61%;
+    /* 图表颜色2 */
+    --chart-2: 173 58% 39%;
+    /* 图表颜色3 */
+    --chart-3: 197 37% 24%;
+    /* 图表颜色4 */
+    --chart-4: 43 74% 66%;
+    /* 图表颜色5 */
+    --chart-5: 27 87% 67%;
+    /* 圆角半径 */
+    --radius: 0.5rem;
+
+    --link: 43, 74%, 38%;
+    --link-hover: 43, 74%, 30%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --primary: red;
+    --primary-foreground: 0 0% 9%;
+  }
+}
+
+@layer utilities {
+  .text-3d {
+    text-shadow:
+      var(--picker-dynamic-accent) 0px 1px 0px,
+      var(--picker-dynamic-accent) 0px 2px 0px,
+      var(--picker-dynamic-accent) 0px 3px 0px,
+      var(--picker-dynamic-accent) 0px 4px 0px,
+      var(--picker-dynamic-accent) 0px 5px 0px,
+      rgba(0, 0, 0, 0.2) 0px 5px 1px,
+      rgba(0, 0, 0, 0.3) 0px 0px 10px,
+      rgba(0, 0, 0, 0.4) 0px 3px 5px,
+      rgba(0, 0, 0, 0.5) 0px 6px 5px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
