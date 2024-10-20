@@ -95,6 +95,8 @@ export const troops: Troop[] = [
     { culture: '巴旦尼亚', id: 'battanian_militia_archer', name: '巴旦尼亚民兵弓箭手' },
     { culture: '巴旦尼亚', id: 'battanian_clanwarrior', name: '巴旦尼亚氏族战士' },
     { culture: '巴旦尼亚', id: 'battanian_volunteer', name: '巴旦尼亚志愿者' },
+    { culture: '巴旦尼亚', id: 'battanian_fian_champion', name: '巴旦尼亚费奥纳冠军' },
+    { culture: '巴旦尼亚', id: 'battanian_fian', name: '巴旦尼亚费奥纳勇士' },
 
     // 强盗和其他部队
     { culture: '沙漠强盗', id: 'desert_bandits_bandit', name: '沙漠强盗' },
