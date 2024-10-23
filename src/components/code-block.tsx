@@ -3,6 +3,7 @@ import { useToast } from '@/hooks/useToast';
 import { copyToClipboard } from '@/lib/utils';
 import { CopyIcon } from '@radix-ui/react-icons';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface CodeBlockProps {
     children: React.ReactNode;
@@ -11,12 +12,13 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '' }) => {
     const { toast } = useToast();
+    const { t } = useTranslation()
 
     const handleCopy = () => {
         copyToClipboard(children as string);
         toast({
-            title: "已将指令复制到剪贴板",
-            description: "已将指令复制到剪贴板",
+            title: t("copy_message"),
+            description: t("copy_message"),
         });
     };
 

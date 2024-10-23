@@ -1,476 +1,471 @@
 // src/data/commands.ts
-
 import { troops } from "./troops";
 
 export interface Command {
-    name: string;
-    code: string;
-    description: string;
+    name: string; // i18n 键
+    code: string; // i18n 键或固定命令
+    description: string; // i18n 键
     params?: { key: string; default?: string; label?: string; type?: string; options?: { value: string; label: string }[] }[];
 }
 
 export interface Category {
-    name: string;
+    name: string; // i18n 键
     commands: Command[];
 }
 
 export const categories: Category[] = [
     {
-        name: '控制台设置',
+        name: 'generate.commands.console_settings.title',
         commands: [
             {
-                name: '打开控制台',
-                code: '按下 Alt + ~',
-                description: '默认的快捷键，打开控制台界面。',
+                name: 'generate.commands.console_settings.open_console.name',
+                code: 'generate.commands.console_settings.open_console.code',
+                description: 'generate.commands.console_settings.open_console.description',
             },
             {
-                name: '启用作弊模式',
-                code: 'config.cheat_mode 1',
-                description: '在控制台中启用作弊模式，无需重启游戏。',
+                name: 'generate.commands.console_settings.enable_cheat.name',
+                code: 'campaign.cheat_mode.enable', // 固定命令，不需要翻译
+                description: 'generate.commands.console_settings.enable_cheat.description',
             },
             {
-                name: '禁用作弊模式',
-                code: 'config.cheat_mode 0',
-                description: '在控制台中禁用作弊模式，无需重启游戏。',
+                name: 'generate.commands.console_settings.disable_cheat.name',
+                code: 'campaign.cheat_mode.disable', // 固定命令，不需要翻译
+                description: 'generate.commands.console_settings.disable_cheat.description',
             },
         ],
     },
     {
-        name: '地图命令',
+        name: 'generate.commands.map_commands.title',
         commands: [
             {
-                name: '地图传送',
-                code: '按住 CTRL 并左键点击地图',
-                description: '按住 CTRL 的同时左键点击地图，可将你传送到任意位置。',
+                name: 'generate.commands.map_commands.map_teleport.name',
+                code: 'generate.commands.map_commands.map_teleport.code',
+                description: 'generate.commands.map_commands.map_teleport.description',
             },
             {
-                name: '显示地图上所有的部队',
-                code: 'campaign.set_armies_and_parties_visible 1',
-                description: '在地图上显示所有部队，前提是你第一次看到过这个队伍，否则将无法正常显示，通过将1 变为 0 代表关闭显示地图上所有部队',
+                name: 'generate.commands.map_commands.show_on_map_troops.name',
+                code: 'campaign.set_armies_and_parties_visible 1', // 固定命令，不需要翻译
+                description: 'generate.commands.map_commands.show_on_map_troops.description',
             },
         ],
     },
     {
-        name: '战斗命令',
+        name: 'generate.commands.combat_commands.title',
         commands: [
             {
-                name: '治疗自己',
-                code: 'CTRL + H',
-                description: '在战斗中将自己治疗至100%生命值。',
+                name: 'generate.commands.combat_commands.heal_self.name',
+                code: 'CTRL + H', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.heal_self.description',
             },
             {
-                name: '治疗马匹',
-                code: 'CTRL + Shift + H',
-                description: '在战斗中将你的马治疗至满血。',
+                name: 'generate.commands.combat_commands.heal_horse.name',
+                code: 'CTRL + Shift + H', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.heal_horse.description',
             },
             {
-                name: '击倒一个敌人',
-                code: 'CTRL + F4',
-                description: '在战场上击倒一个敌人。',
+                name: 'generate.commands.combat_commands.knock_down_one_enemy.name',
+                code: 'CTRL + F4', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.knock_down_one_enemy.description',
             },
             {
-                name: '击倒所有敌人',
-                code: 'CTRL + ALT + F4',
-                description: '在战场上击倒所有敌人。',
+                name: 'generate.commands.combat_commands.knock_down_all_enemies.name',
+                code: 'CTRL + ALT + F4', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.knock_down_all_enemies.description',
             },
             {
-                name: '击倒一个友军',
-                code: 'CTRL + F2',
-                description: '在战场上击倒你的一名士兵。',
+                name: 'generate.commands.combat_commands.knock_down_one_ally.name',
+                code: 'CTRL + F2', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.knock_down_one_ally.description',
             },
             {
-                name: '击倒所有友军',
-                code: 'CTRL + ALT + F2',
-                description: '在战场上击倒你所有的士兵。',
+                name: 'generate.commands.combat_commands.knock_down_all_allies.name',
+                code: 'CTRL + ALT + F2', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.knock_down_all_allies.description',
             },
             {
-                name: '击倒自己',
-                code: 'CTRL + F3',
-                description: '在战场上击倒自己。',
+                name: 'generate.commands.combat_commands.knock_down_self.name',
+                code: 'CTRL + F3', // 固定快捷键，不需要翻译
+                description: 'generate.commands.combat_commands.knock_down_self.description',
             },
         ],
     },
     {
-        name: '增加金币、技能点、关系等命令',
+        name: 'generate.commands.add_gold_skill_points_relationships.title',
         commands: [
             {
-                name: '添加金币',
+                name: 'generate.commands.add_gold_skill_points_relationships.add_gold.name',
                 code: 'campaign.add_gold_to_hero {hero_name} | {amount}',
-                description: '为指定英雄添加指定数量的金币。',
+                description: 'generate.commands.add_gold_skill_points_relationships.add_gold.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '50000', label: '金币数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '50000', label: 'generate.parameters.gold_amount' },
                 ],
             },
             {
-                name: '为所有人添加金币',
+                name: 'generate.commands.add_gold_skill_points_relationships.add_gold_for_everyone.name',
                 code: 'campaign.add_gold_to_all_heroes {amount}',
-                description: '为所有人添加指定数量的金币。',
+                description: 'generate.commands.add_gold_skill_points_relationships.add_gold_for_everyone.description',
                 params: [
-                    { key: 'amount', default: '50000', label: '金币数量' },
+                    { key: 'amount', default: '50000', label: 'generate.parameters.gold_amount' },
                 ],
             },
             {
-                name: '增加影响力',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_influence.name',
                 code: 'campaign.add_influence {amount}',
-                description: '增加主角指定数量的影响力。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_influence.description',
                 params: [
-                    { key: 'amount', default: '100', label: '影响力数量' },
+                    { key: 'amount', default: '100', label: 'generate.parameters.influence_amount' },
                 ],
             },
             {
-                name: '增加声望',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_renown.name',
                 code: 'campaign.add_renown_to_clan {clan_name} | {amount}',
-                description: '为指定家族增加指定数量的声望。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_renown.description',
                 params: [
-                    { key: 'clan_name', default: '', label: '家族名称（省略为空时为自己家族）' },
-                    { key: 'amount', default: '500', label: '声望数量' },
+                    { key: 'clan_name', default: '', label: 'generate.parameters.clan_name' },
+                    { key: 'amount', default: '500', label: 'generate.parameters.renown_amount' },
                 ],
             },
             {
-                name: '增加专精点',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_focus_points.name',
                 code: 'campaign.add_focus_points_to_hero {hero_name} | {amount}',
-                description: '为指定英雄增加指定数量的专精点。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_focus_points.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '30', label: '专精点数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '30', label: 'generate.parameters.focus_points_amount' },
                 ],
             },
             {
-                name: '增加属性点',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_attribute_points.name',
                 code: 'campaign.add_attribute_points_to_hero {hero_name} | {amount}',
-                description: '为指定英雄增加指定数量的属性点。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_attribute_points.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '30', label: '属性点数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '30', label: 'generate.parameters.attribute_points_amount' },
                 ],
             },
             {
-                name: '主队伍经验值',
+                name: 'generate.commands.add_gold_skill_points_relationships.add_troops_xp.name',
                 code: 'campaign.add_troops_xp {amount}',
-                description: '为主队伍增加指定数量的经验值（对英雄单位不会生效）',
+                description: 'generate.commands.add_gold_skill_points_relationships.add_troops_xp.description',
                 params: [
-                    { key: 'amount', default: '999', label: '经验值数量' },
+                    { key: 'amount', default: '999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加与指定英雄的关系',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_hero_relation.name',
                 code: 'campaign.add_hero_relation {hero_name} | {amount}',
-                description: '增加主角与指定英雄的关系。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_hero_relation.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（不得为空）' },
-                    { key: 'amount', default: '100', label: '关系数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '100', label: 'generate.parameters.relation_amount' },
                 ],
             },
             {
-                name: '增加与所有英雄的关系',
+                name: 'generate.commands.add_gold_skill_points_relationships.increase_all_heroes_relation.name',
                 code: 'campaign.add_hero_relation ALL | {amount}',
-                description: '增加主角与所有英雄的关系。',
+                description: 'generate.commands.add_gold_skill_points_relationships.increase_all_heroes_relation.description',
                 params: [
-                    { key: 'amount', default: '100', label: '关系数量' },
+                    { key: 'amount', default: '100', label: 'generate.parameters.relation_amount' },
                 ],
             }
         ],
     },
     {
-        name: '技能命令',
+        name: 'generate.commands.skill_commands.title',
         commands: [
             {
-                name: '增加双手武器技能经验',
+                name: 'generate.commands.skill_commands.increase_two_handed_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | TwoHanded | {amount}',
-                description: '为指定英雄的双手武器技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_two_handed_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加单手武器技能经验',
+                name: 'generate.commands.skill_commands.increase_one_handed_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | OneHanded | {amount}',
-                description: '为指定英雄的单手武器技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_one_handed_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加跑动技能经验',
+                name: 'generate.commands.skill_commands.increase_athletics_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Athletics | {amount}',
-                description: '为指定英雄的跑动技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_athletics_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加投掷技能经验',
+                name: 'generate.commands.skill_commands.increase_throwing_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Throwing | {amount}',
-                description: '为指定英雄的投掷技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_throwing_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加骑术技能经验',
+                name: 'generate.commands.skill_commands.increase_riding_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Riding | {amount}',
-                description: '为指定英雄的骑术技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_riding_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加弓箭技能经验',
+                name: 'generate.commands.skill_commands.increase_bow_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Bow | {amount}',
-                description: '为指定英雄的弓箭技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_bow_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加长杆武器技能经验',
+                name: 'generate.commands.skill_commands.increase_polearm_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Polearm | {amount}',
-                description: '为指定英雄的长杆武器技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_polearm_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加弩箭技能经验',
+                name: 'generate.commands.skill_commands.increase_crossbow_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Crossbow | {amount}',
-                description: '为指定英雄的弩箭技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_crossbow_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加锻造技能经验',
+                name: 'generate.commands.skill_commands.increase_smithing_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Smithing | {amount}',
-                description: '为指定英雄的锻造技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_smithing_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加流氓技能经验',
+                name: 'generate.commands.skill_commands.increase_roguery_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Roguery | {amount}',
-                description: '为指定英雄的流氓技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_roguery_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加战术技能经验',
+                name: 'generate.commands.skill_commands.increase_tactics_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Tactics | {amount}',
-                description: '为指定英雄的战术技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_tactics_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加侦察技能经验',
+                name: 'generate.commands.skill_commands.increase_scouting_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Scouting | {amount}',
-                description: '为指定英雄的侦察技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_scouting_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加魅力技能经验',
+                name: 'generate.commands.skill_commands.increase_charm_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Charm | {amount}',
-                description: '为指定英雄的魅力技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_charm_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加统御技能经验',
+                name: 'generate.commands.skill_commands.increase_leadership_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Leadership | {amount}',
-                description: '为指定英雄的统御技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_leadership_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加交易技能经验',
+                name: 'generate.commands.skill_commands.increase_trade_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Trade | {amount}',
-                description: '为指定英雄的交易技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_trade_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加管理技能经验',
+                name: 'generate.commands.skill_commands.increase_steward_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Steward | {amount}',
-                description: '为指定英雄的管理技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_steward_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加医疗技能经验',
+                name: 'generate.commands.skill_commands.increase_medicine_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Medicine | {amount}',
-                description: '为指定英雄的医疗技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_medicine_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
             {
-                name: '增加工程学技能经验',
+                name: 'generate.commands.skill_commands.increase_engineering_xp.name',
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Engineering | {amount}',
-                description: '为指定英雄的工程学技能增加经验值。',
+                description: 'generate.commands.skill_commands.increase_engineering_xp.description',
                 params: [
-                    { key: 'hero_name', default: '', label: '英雄名称（省略为空时为自己）' },
-                    { key: 'amount', default: '99999', label: '经验值数量' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
                 ],
             },
         ],
     },
     {
-        name: "物品命令",
+        name: 'generate.commands.item_commands.title',
         commands: [
             {
-                name: "给予主要队伍所有锻造材料指定数量",
-                code: "campaign.give_all_crafting_materials_to_main_party {amount}",
-                description: "给予主要队伍所有锻造材料指定数量。",
+                name: 'generate.commands.item_commands.give_all_crafting_materials.name',
+                code: 'campaign.give_all_crafting_materials_to_main_party {amount}',
+                description: 'generate.commands.item_commands.give_all_crafting_materials.description',
                 params: [
-                    { key: 'amount', default: '1000', label: '数量' },
+                    { key: 'amount', default: '1000', label: 'generate.parameters.amount' },
                 ],
             }
         ]
     },
     {
-        name: '队伍命令',
+        name: 'generate.commands.party_commands.title',
         commands: [
             {
-                name: '添加部队',
+                name: 'generate.commands.party_commands.add_troops.name',
                 code: 'campaign.add_troops {troop_id} | {amount} | {party_name}',
-                description: '向你的队伍中添加指定的部队。',
+                description: 'generate.commands.party_commands.add_troops.description',
                 params: [
                     {
                         key: 'troop_id',
-                        label: '部队名称',
+                        label: 'generate.parameters.troop_name',
                         type: 'select',
-                        options: troops.map(troop => ({ value: troop.id, label: troop.name })), // 在组件中根据这个选项生成下拉菜单
+                        options: troops.map(troop => ({ value: troop.id, label: `troops.${troop.id}` })), // 使用 i18n 键
                     },
-                    { key: 'amount', default: '50', label: '部队数量', type: 'number' },
-                    { key: 'party_name', default: '', label: '队伍名称（省略为空时为主队伍）' },
+                    { key: 'amount', default: '50', label: 'generate.parameters.amount', type: 'number' },
+                    { key: 'party_name', default: '', label: 'generate.parameters.party_name', type: 'text' },
                 ],
             },
             {
-                name: "添加同伴",
-                code: "campaign.add_companion",
-                description: "为你的队伍添加一个随机同伴",
+                name: 'generate.commands.party_commands.add_companion.name',
+                code: 'campaign.add_companion',
+                description: 'generate.commands.party_commands.add_companion.description',
             },
             {
-                name: "添加指定数量的同伴到队伍中",
-                code: "campaign.add_companions {amount}",
-                description: "向你的队伍添加指定数量的同伴。",
+                name: 'generate.commands.party_commands.add_companions.name',
+                code: 'campaign.add_companions {amount}',
+                description: 'generate.commands.party_commands.add_companions.description',
                 params: [
-                    { key: 'amount', default: '1', label: '同伴数量', type: 'number' },
+                    { key: 'amount', default: '1', label: 'generate.parameters.amount', type: 'number' },
                 ],
             }
         ],
     },
     {
-        name: '其他有用的命令',
+        name: 'generate.commands.other_useful_commands.title',
         commands: [
             {
-                name: '激活所有政策',
+                name: 'generate.commands.other_useful_commands.activate_all_policies.name',
                 code: 'campaign.activate_all_policies_for_player_kingdom',
-                description: '为玩家的王国激活所有政策。',
+                description: 'generate.commands.other_useful_commands.activate_all_policies.description',
             },
-            // {
-            //     name: '增加指定城镇的指定建筑等级',
-            //     code: 'campaign.add_building_level {settlement_name} | {building_name}',
-            //     description: '增加指定城镇指定建筑的等级。',
-            //     params: [
-            //         { key: 'settlement_name', label: '城镇名称' },
-            //         { key: 'building_name', label: '建筑名称' },
-            //     ],
-            // },
             {
-                name: '给予玩家所有城镇和要塞',
+                name: 'generate.commands.other_useful_commands.give_all_settlements.name',
                 code: 'campaign.give_settlements_to_player Calradia',
-                description: '给予玩家所有城镇和要塞。',
+                description: 'generate.commands.other_useful_commands.give_all_settlements.description',
             },
             {
-                name: '为指定英雄添加商队',
+                name: 'generate.commands.other_useful_commands.add_caravan_to_hero.name',
                 code: 'campaign.add_caravan_to_hero',
-                description: '为指定英雄添加一支商队。',
-            },
-            {
-                name: '添加随从',
-                code: 'campaign.add_companion',
-                description: '为你的队伍添加一个随从。',
-            },
-            {
-                name: '添加马匹',
-                code: 'campaign.add_horse',
-                description: '为指定英雄添加一匹马。',
-            },
-            {
-                name: '增加队伍士气',
-                code: 'campaign.add_morale_to_party',
-                description: '增加主队伍的士气值。',
-            },
-            {
-                name: '添加囚犯',
-                code: 'campaign.add_prisoner',
-                description: '为你的队伍添加一名囚犯。',
-            },
-            {
-                name: '增加当前建筑进度',
-                code: 'campaign.add_progress_to_current_building',
-                description: '为当前建筑增加建造进度。',
-            },
-            {
-                name: '添加随机英雄到队伍',
-                code: 'campaign.add_random_hero_to_party',
-                description: '向你的队伍添加一名随机英雄。',
-            },
-            {
-                name: '添加随机英雄囚犯',
-                code: 'campaign.add_random_prisoner_hero',
-                description: '向你的队伍添加一名随机英雄囚犯。',
-            },
-            {
-                name: '为指定英雄添加样本子女',
-                code: 'campaign.add_sample_children_to_main_character',
-                description: '为指定英雄添加一些样本子女。',
-            },
-            {
-                name: '收养英雄',
-                code: 'campaign.adopt_hero',
-                description: '收养指定的英雄。',
+                description: 'generate.commands.other_useful_commands.add_caravan_to_hero.description',
                 params: [
-                    { key: 'hero_id', default: '', label: '英雄ID' },
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
                 ],
             },
             {
-                name: '创建玩家王国',
-                code: 'campaign.create_player_kingdom',
-                description: '立即创建一个属于你的王国。',
+                name: 'generate.commands.other_useful_commands.add_companion_followers.name',
+                code: 'campaign.add_companion',
+                description: 'generate.commands.other_useful_commands.add_companion_followers.description',
             },
             {
-                name: '与所有派系和平',
-                code: 'campaign.make_peace_with_every_faction',
-                description: '与所有派系和平，清除你的犯罪记录。',
+                name: 'generate.commands.other_useful_commands.add_horse_to_hero.name',
+                code: 'campaign.add_horse',
+                description: 'generate.commands.other_useful_commands.add_horse_to_hero.description',
+                params: [
+                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
+                ],
             },
-            // ... 根据需要继续添加其他命令
+            {
+                name: 'generate.commands.other_useful_commands.increase_party_morale.name',
+                code: 'campaign.add_morale_to_party',
+                description: 'generate.commands.other_useful_commands.increase_party_morale.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.add_prisoner.name',
+                code: 'campaign.add_prisoner',
+                description: 'generate.commands.other_useful_commands.add_prisoner.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.add_building_progress.name',
+                code: 'campaign.add_progress_to_current_building',
+                description: 'generate.commands.other_useful_commands.add_building_progress.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.add_random_hero_to_party.name',
+                code: 'campaign.add_random_hero_to_party',
+                description: 'generate.commands.other_useful_commands.add_random_hero_to_party.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.add_random_prisoner_hero.name',
+                code: 'campaign.add_random_prisoner_hero',
+                description: 'generate.commands.other_useful_commands.add_random_prisoner_hero.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.add_sample_children_to_main_character.name',
+                code: 'campaign.add_sample_children_to_main_character',
+                description: 'generate.commands.other_useful_commands.add_sample_children_to_main_character.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.adopt_hero.name',
+                code: 'campaign.adopt_hero',
+                description: 'generate.commands.other_useful_commands.adopt_hero.description',
+                params: [
+                    { key: 'hero_id', default: '', label: 'generate.parameters.hero_id' },
+                ],
+            },
+            {
+                name: 'generate.commands.other_useful_commands.create_player_kingdom.name',
+                code: 'campaign.create_player_kingdom',
+                description: 'generate.commands.other_useful_commands.create_player_kingdom.description',
+            },
+            {
+                name: 'generate.commands.other_useful_commands.make_peace_with_every_faction.name',
+                code: 'campaign.make_peace_with_every_faction',
+                description: 'generate.commands.other_useful_commands.make_peace_with_every_faction.description',
+            },
         ],
     },
 ];
