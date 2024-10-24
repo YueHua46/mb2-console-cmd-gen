@@ -13,7 +13,7 @@ const resources = {
     },
 } as const;
 
-const t = await i18next.use(initReactI18next).init({
+i18next.use(initReactI18next).init({
     lng: "en",
     ns: ["common"],
     defaultNS,
@@ -23,6 +23,5 @@ const t = await i18next.use(initReactI18next).init({
 export {
     defaultNS,
     resources,
-    t,
     i18next
 }
