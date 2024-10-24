@@ -1,19 +1,12 @@
 // import { ModeToggle } from "@/components/mode-trigger";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ModeToggle } from "@/components/mode-trigger";
-import { useTheme } from "@/components/theme-provider";
-import { Switch } from "@/components/ui/switch";
 import { getImageUrl } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
 
     const { t } = useTranslation("common");
-    const { theme, setTheme } = useTheme();
-
-    const handleThemeModeChange = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    }
 
     return (
         <header className="bg-background shadow-md">
