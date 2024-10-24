@@ -1,4 +1,7 @@
 {
+    "page": {
+        "title": "骑马与砍杀2霸主 - 控制台指令生成器"
+    },
     "troops": {
         "aserai_mameluke_guard": "阿塞莱马穆鲁克护卫",
         "aserai_veteran_infantry": "阿塞莱老兵步兵",
@@ -105,7 +108,7 @@
         "sea_raiders_boss": "海寇首领"
     },
     "header": {
-        "mount_blade_title": "Mount&Blade II 控制台生成器",
+        "mount_blade_title": "骑马与砍杀2霸主 - 控制台指令生成器",
         "theme_mode": "主题模式"
     },
     "preparation": {

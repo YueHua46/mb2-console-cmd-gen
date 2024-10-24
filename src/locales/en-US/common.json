@@ -104,8 +104,11 @@
         "sea_raiders_chief": "Sea Raiders Chief",
         "sea_raiders_boss": "Sea Raiders Boss"
     },
+    "page": {
+        "title": "Mount & Blade II: Bannerlord Cheat Command Generator"
+    },
     "header": {
-        "mount_blade_title": "Mount&Blade II Console Generate",
+        "mount_blade_title": "Mount&Blade II Console Command Generator",
         "theme_mode": "Theme Mode"
     },
     "preparation": {
@@ -524,7 +527,7 @@
                 },
                 "create_player_kingdom": {
                     "title": "Create Player Kingdom",
-                    "description": "Immediately create a kingdom for yourself.",
+                    "description": "Immediately create a kingdom for yourself. ",
                     "parameters": {}
                 },
                 "make_peace_with_every_faction": {
