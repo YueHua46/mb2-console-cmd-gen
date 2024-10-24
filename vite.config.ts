@@ -8,7 +8,7 @@ import sitemap from 'vite-plugin-sitemap'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [TanStackRouterVite(), react(), UnoCSS(), sitemap({
-    hostname: 'https://mb2-console-cmd-gen.vercel.app/',  // 你的域名
+    hostname: 'https://www.cmdgenmb2.top/',  // 你的域名
   }),
   ],
   resolve: {
