@@ -1,14 +1,15 @@
 // src/components/CommandGenerator.tsx
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import CodeBlock from '@/components/code-block';
-import { categories, Command, Category } from '@/data/commands';
+import { categories as rawCategories, Command, Category } from '@/data/commands';
 import clsx from 'clsx';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { cultures, troops } from '@/data/troops';
+import { useTranslation } from 'react-i18next';
 
 const CommandGenerator: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
@@ -18,6 +19,8 @@ const CommandGenerator: React.FC = () => {
     const [selectedCulture, setSelectedCulture] = useState<string>('');
     const [selectedTroop, setSelectedTroop] = useState<string>('');
     const [globalSearchTerm, setGlobalSearchTerm] = useState<string>('');
+
+    const { t } = useTranslation("common");
 
     const handleCategorySelect = (category: Category) => {
         setSelectedCategory(category);
@@ -79,6 +82,28 @@ const CommandGenerator: React.FC = () => {
         return cmd;
     };
 
+    const categories = useMemo(() => {
+        return rawCategories.map(category => ({
+            ...category,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            name: t(category.name as any), // 使用 t 函数动态获取翻译
+            commands: category.commands.map(command => ({
+                ...command,
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                name: t(command.name as any),
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                description: t(command.description as any),
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                code: t(command.code as any),
+                params: command.params?.map((param) => ({
+                    ...param,
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    label: t(param.label as any),
+                })),
+            }))
+        }));
+    }, [t]);
+
     // 过滤命令，根据是否进行全局搜索
     const filteredCommands = (() => {
         if (globalSearchTerm.trim() !== '') {
@@ -99,16 +124,16 @@ const CommandGenerator: React.FC = () => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle className='text-xl'>命令生成器</CardTitle>
+                <CardTitle className='text-xl'>{t("generate.generator")}</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className='flex flex-col gap-4'>
                     {/* 全局搜索 */}
                     <div>
-                        <h3 className='mb-2 font-semibold'>全局搜索命令</h3>
+                        <h3 className='mb-2 font-semibold'>{t("generate.global_search")}</h3>
                         <Input
                             type='text'
-                            placeholder='搜索所有命令...'
+                            placeholder={t("generate.global_search_placeholder")}
                             value={globalSearchTerm}
                             onChange={(e) => {
                                 setGlobalSearchTerm(e.target.value);
@@ -123,7 +148,7 @@ const CommandGenerator: React.FC = () => {
                     {/* 分类选择 */}
                     {!globalSearchTerm && (
                         <div>
-                            <h3 className='mb-2 font-semibold'>选择分类</h3>
+                            <h3 className='mb-2 font-semibold'>{t("generate.select_category")}</h3>
                             <div className='flex flex-wrap gap-2'>
                                 {categories.map((category) => (
                                     <Button
@@ -151,12 +176,12 @@ const CommandGenerator: React.FC = () => {
                             {/* 命令选择与搜索 */}
                             {((!globalSearchTerm && selectedCategory) || (globalSearchTerm && filteredCommands.length > 0)) && (
                                 <div>
-                                    <h3 className='mb-2 font-semibold'>选择命令</h3>
+                                    <h3 className='mb-2 font-semibold'>{t("generate.select_command")}</h3>
                                     {/* 搜索框，仅在类别选择时显示 */}
                                     {!globalSearchTerm && selectedCategory && (
                                         <Input
                                             type='text'
-                                            placeholder='搜索命令...'
+                                            placeholder={t("generate.search_command_placeholder")}
                                             value={searchTerm}
                                             onChange={(e) => setSearchTerm(e.target.value)}
                                         />
@@ -178,7 +203,7 @@ const CommandGenerator: React.FC = () => {
                                                 </Button>
                                             ))
                                         ) : (
-                                            <p className='text-muted-foreground'>未找到匹配的命令。</p>
+                                            <p className='text-muted-foreground'>{t("generate.no_match_command")}</p>
                                         )}
                                     </div>
                                 </div>
@@ -187,7 +212,7 @@ const CommandGenerator: React.FC = () => {
                             {/* 参数输入 */}
                             {selectedCommand && selectedCommand.params && (
                                 <div>
-                                    <h3 className='mb-2 font-semibold'>输入参数</h3>
+                                    <h3 className='mb-2 font-semibold'>{t("generate.input_parameters")}</h3>
                                     <div className='flex flex-col gap-4'>
                                         {selectedCommand.params.map((param) => {
                                             if (param.type === 'select' && param.options) {
@@ -206,7 +231,7 @@ const CommandGenerator: React.FC = () => {
                                                                 }}
                                                             >
                                                                 <SelectTrigger>
-                                                                    <SelectValue placeholder="选择文化" />
+                                                                    <SelectValue placeholder={t("generate.select_culture")} />
                                                                 </SelectTrigger>
                                                                 <SelectContent>
                                                                     {cultures.map((culture) => (
@@ -226,14 +251,14 @@ const CommandGenerator: React.FC = () => {
                                                                     }}
                                                                 >
                                                                     <SelectTrigger>
-                                                                        <SelectValue placeholder="选择部队" />
+                                                                        <SelectValue placeholder={t("generate.select_troop")} />
                                                                     </SelectTrigger>
                                                                     <SelectContent>
                                                                         {troops
                                                                             .filter((troop) => troop.culture === selectedCulture)
                                                                             .map((troop) => (
                                                                                 <SelectItem key={troop.id} value={troop.id}>
-                                                                                    {troop.name}
+                                                                                    {troop.culture} {troop.id}
                                                                                 </SelectItem>
                                                                             ))}
                                                                     </SelectContent>
@@ -251,7 +276,7 @@ const CommandGenerator: React.FC = () => {
                                                                 value={params[param.key]}
                                                                 onChange={(e) => handleParamChange(param.key, e.target.value)}
                                                             >
-                                                                <option value=''>选择 {param.label}</option>
+                                                                <option value=''>{t("generate.select_placeholder", { label: param.label })}</option>
                                                                 {param.options.map((option) => (
                                                                     <option key={option.value} value={option.value}>
                                                                         {option.label}
@@ -296,7 +321,7 @@ const CommandGenerator: React.FC = () => {
                         {/* 命令显示 */}
                         {selectedCommand && (
                             <div className='flex-1'>
-                                <h3 className='mb-2 font-semibold'>生成的命令</h3>
+                                <h3 className='mb-2 font-semibold'>{t("generate.generated_command")}</h3>
                                 <div className='relative'>
                                     <p className='mt-2 text-sm'>{selectedCommand.description}</p>
                                     <CodeBlock>

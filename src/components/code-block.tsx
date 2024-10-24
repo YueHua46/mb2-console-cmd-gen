@@ -12,7 +12,8 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '' }) => {
     const { toast } = useToast();
-    const { t } = useTranslation()
+    const { t } = useTranslation("common");
+
 
     const handleCopy = () => {
         copyToClipboard(children as string);

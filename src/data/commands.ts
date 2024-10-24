@@ -2,469 +2,469 @@
 import { troops } from "./troops";
 
 export interface Command {
-    name: string; // i18n 键
-    code: string; // i18n 键或固定命令
-    description: string; // i18n 键
+    name: string;
+    code: string;
+    description: string;
     params?: { key: string; default?: string; label?: string; type?: string; options?: { value: string; label: string }[] }[];
 }
 
 export interface Category {
-    name: string; // i18n 键
+    name: string;
     commands: Command[];
 }
 
 export const categories: Category[] = [
     {
-        name: 'generate.commands.console_settings.title',
+        name: "generate.console_settings.title",
         commands: [
             {
-                name: 'generate.commands.console_settings.open_console.name',
-                code: 'generate.commands.console_settings.open_console.code',
-                description: 'generate.commands.console_settings.open_console.description',
+                name: "generate.console_settings.children.open_console.title",
+                code: "generate.console_settings.children.open_console.generated_command",
+                description: "generate.console_settings.children.open_console.description",
             },
             {
-                name: 'generate.commands.console_settings.enable_cheat.name',
-                code: 'campaign.cheat_mode.enable', // 固定命令，不需要翻译
-                description: 'generate.commands.console_settings.enable_cheat.description',
+                name: "generate.console_settings.children.enable_cheat.title",
+                code: 'cheat_mode 1', // 固定命令，不需要翻译
+                description: "generate.console_settings.children.enable_cheat.description",
             },
             {
-                name: 'generate.commands.console_settings.disable_cheat.name',
-                code: 'campaign.cheat_mode.disable', // 固定命令，不需要翻译
-                description: 'generate.commands.console_settings.disable_cheat.description',
+                name: "generate.console_settings.children.disable_cheat.title",
+                code: 'cheat_mode 0', // 固定命令，不需要翻译
+                description: "generate.console_settings.children.disable_cheat.description",
             },
         ],
     },
     {
-        name: 'generate.commands.map_commands.title',
+        name: "generate.map_commands.title",
         commands: [
             {
-                name: 'generate.commands.map_commands.map_teleport.name',
-                code: 'generate.commands.map_commands.map_teleport.code',
-                description: 'generate.commands.map_commands.map_teleport.description',
+                name: "generate.map_commands.children.map_teleport.title",
+                code: "generate.map_commands.children.map_teleport.generated_command",
+                description: "generate.map_commands.children.map_teleport.description",
             },
             {
-                name: 'generate.commands.map_commands.show_on_map_troops.name',
+                name: "generate.map_commands.children.show_on_map_troops.title",
                 code: 'campaign.set_armies_and_parties_visible 1', // 固定命令，不需要翻译
-                description: 'generate.commands.map_commands.show_on_map_troops.description',
+                description: "generate.map_commands.children.show_on_map_troops.description",
             },
         ],
     },
     {
-        name: 'generate.commands.combat_commands.title',
+        name: "generate.combat_commands.title",
         commands: [
             {
-                name: 'generate.commands.combat_commands.heal_self.name',
+                name: "generate.combat_commands.children.heal_self.title",
                 code: 'CTRL + H', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.heal_self.description',
+                description: "generate.combat_commands.children.heal_self.description",
             },
             {
-                name: 'generate.commands.combat_commands.heal_horse.name',
+                name: "generate.combat_commands.children.heal_horse.title",
                 code: 'CTRL + Shift + H', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.heal_horse.description',
+                description: "generate.combat_commands.children.heal_horse.description",
             },
             {
-                name: 'generate.commands.combat_commands.knock_down_one_enemy.name',
+                name: "generate.combat_commands.children.knock_down_one_enemy.title",
                 code: 'CTRL + F4', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.knock_down_one_enemy.description',
+                description: "generate.combat_commands.children.knock_down_one_enemy.description",
             },
             {
-                name: 'generate.commands.combat_commands.knock_down_all_enemies.name',
+                name: "generate.combat_commands.children.knock_down_all_enemies.title",
                 code: 'CTRL + ALT + F4', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.knock_down_all_enemies.description',
+                description: "generate.combat_commands.children.knock_down_all_enemies.description",
             },
             {
-                name: 'generate.commands.combat_commands.knock_down_one_ally.name',
+                name: "generate.combat_commands.children.knock_down_one_ally.title",
                 code: 'CTRL + F2', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.knock_down_one_ally.description',
+                description: "generate.combat_commands.children.knock_down_one_ally.description",
             },
             {
-                name: 'generate.commands.combat_commands.knock_down_all_allies.name',
+                name: "generate.combat_commands.children.knock_down_all_allies.title",
                 code: 'CTRL + ALT + F2', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.knock_down_all_allies.description',
+                description: "generate.combat_commands.children.knock_down_all_allies.description",
             },
             {
-                name: 'generate.commands.combat_commands.knock_down_self.name',
+                name: "generate.combat_commands.children.knock_down_self.title",
                 code: 'CTRL + F3', // 固定快捷键，不需要翻译
-                description: 'generate.commands.combat_commands.knock_down_self.description',
+                description: "generate.combat_commands.children.knock_down_self.description",
             },
         ],
     },
     {
-        name: 'generate.commands.add_gold_skill_points_relationships.title',
+        name: "generate.add_gold_skill_points_relationships.title",
         commands: [
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.add_gold.name',
+                name: "generate.add_gold_skill_points_relationships.children.add_gold.title",
                 code: 'campaign.add_gold_to_hero {hero_name} | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.add_gold.description',
+                description: "generate.add_gold_skill_points_relationships.children.add_gold.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '50000', label: 'generate.parameters.gold_amount' },
+                    { key: 'hero_name', default: '', label: "generate.add_gold_skill_points_relationships.children.add_gold.parameters.hero_name" },
+                    { key: 'amount', default: '50000', label: "generate.add_gold_skill_points_relationships.children.add_gold.parameters.gold_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.add_gold_for_everyone.name',
+                name: "generate.add_gold_skill_points_relationships.children.add_gold_for_everyone.title",
                 code: 'campaign.add_gold_to_all_heroes {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.add_gold_for_everyone.description',
+                description: "generate.add_gold_skill_points_relationships.children.add_gold_for_everyone.description",
                 params: [
-                    { key: 'amount', default: '50000', label: 'generate.parameters.gold_amount' },
+                    { key: 'amount', default: '50000', label: "generate.add_gold_skill_points_relationships.children.add_gold_for_everyone.parameters.gold_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_influence.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_influence.title",
                 code: 'campaign.add_influence {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_influence.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_influence.description",
                 params: [
-                    { key: 'amount', default: '100', label: 'generate.parameters.influence_amount' },
+                    { key: 'amount', default: '100', label: "generate.add_gold_skill_points_relationships.children.increase_influence.parameters.influence_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_renown.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_renown.title",
                 code: 'campaign.add_renown_to_clan {clan_name} | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_renown.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_renown.description",
                 params: [
-                    { key: 'clan_name', default: '', label: 'generate.parameters.clan_name' },
-                    { key: 'amount', default: '500', label: 'generate.parameters.renown_amount' },
+                    { key: 'clan_name', default: '', label: "generate.add_gold_skill_points_relationships.children.increase_renown.parameters.clan_name" },
+                    { key: 'amount', default: '500', label: "generate.add_gold_skill_points_relationships.children.increase_renown.parameters.renown_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_focus_points.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_focus_points.title",
                 code: 'campaign.add_focus_points_to_hero {hero_name} | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_focus_points.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_focus_points.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '30', label: 'generate.parameters.focus_points_amount' },
+                    { key: 'hero_name', default: '', label: "generate.add_gold_skill_points_relationships.children.increase_focus_points.parameters.hero_name" },
+                    { key: 'amount', default: '30', label: "generate.add_gold_skill_points_relationships.children.increase_focus_points.parameters.focus_points_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_attribute_points.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_attribute_points.title",
                 code: 'campaign.add_attribute_points_to_hero {hero_name} | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_attribute_points.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_attribute_points.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '30', label: 'generate.parameters.attribute_points_amount' },
+                    { key: 'hero_name', default: '', label: "generate.add_gold_skill_points_relationships.children.increase_attribute_points.parameters.hero_name" },
+                    { key: 'amount', default: '30', label: "generate.add_gold_skill_points_relationships.children.increase_attribute_points.parameters.attribute_points_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.add_troops_xp.name',
+                name: "generate.add_gold_skill_points_relationships.children.add_troops_xp.title",
                 code: 'campaign.add_troops_xp {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.add_troops_xp.description',
+                description: "generate.add_gold_skill_points_relationships.children.add_troops_xp.description",
                 params: [
-                    { key: 'amount', default: '999', label: 'generate.parameters.xp_amount' },
+                    { key: 'amount', default: '999', label: "generate.add_gold_skill_points_relationships.children.add_troops_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_hero_relation.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_hero_relation.title",
                 code: 'campaign.add_hero_relation {hero_name} | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_hero_relation.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_hero_relation.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '100', label: 'generate.parameters.relation_amount' },
+                    { key: 'hero_name', default: '', label: "generate.add_gold_skill_points_relationships.children.increase_hero_relation.parameters.hero_name" },
+                    { key: 'amount', default: '100', label: "generate.add_gold_skill_points_relationships.children.increase_hero_relation.parameters.relation_amount" },
                 ],
             },
             {
-                name: 'generate.commands.add_gold_skill_points_relationships.increase_all_heroes_relation.name',
+                name: "generate.add_gold_skill_points_relationships.children.increase_all_heroes_relation.title",
                 code: 'campaign.add_hero_relation ALL | {amount}',
-                description: 'generate.commands.add_gold_skill_points_relationships.increase_all_heroes_relation.description',
+                description: "generate.add_gold_skill_points_relationships.children.increase_all_heroes_relation.description",
                 params: [
-                    { key: 'amount', default: '100', label: 'generate.parameters.relation_amount' },
+                    { key: 'amount', default: '100', label: "generate.add_gold_skill_points_relationships.children.increase_all_heroes_relation.parameters.relation_amount" },
                 ],
             }
         ],
     },
     {
-        name: 'generate.commands.skill_commands.title',
+        name: "generate.skill_commands.title",
         commands: [
             {
-                name: 'generate.commands.skill_commands.increase_two_handed_xp.name',
+                name: "generate.skill_commands.children.increase_two_handed_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | TwoHanded | {amount}',
-                description: 'generate.commands.skill_commands.increase_two_handed_xp.description',
+                description: "generate.skill_commands.children.increase_two_handed_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_two_handed_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_two_handed_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_one_handed_xp.name',
+                name: "generate.skill_commands.children.increase_one_handed_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | OneHanded | {amount}',
-                description: 'generate.commands.skill_commands.increase_one_handed_xp.description',
+                description: "generate.skill_commands.children.increase_one_handed_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_one_handed_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_one_handed_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_athletics_xp.name',
+                name: "generate.skill_commands.children.increase_athletics_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Athletics | {amount}',
-                description: 'generate.commands.skill_commands.increase_athletics_xp.description',
+                description: "generate.skill_commands.children.increase_athletics_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_athletics_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_athletics_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_throwing_xp.name',
+                name: "generate.skill_commands.children.increase_throwing_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Throwing | {amount}',
-                description: 'generate.commands.skill_commands.increase_throwing_xp.description',
+                description: "generate.skill_commands.children.increase_throwing_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_throwing_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_throwing_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_riding_xp.name',
+                name: "generate.skill_commands.children.increase_riding_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Riding | {amount}',
-                description: 'generate.commands.skill_commands.increase_riding_xp.description',
+                description: "generate.skill_commands.children.increase_riding_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_riding_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_riding_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_bow_xp.name',
+                name: "generate.skill_commands.children.increase_bow_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Bow | {amount}',
-                description: 'generate.commands.skill_commands.increase_bow_xp.description',
+                description: "generate.skill_commands.children.increase_bow_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_bow_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_bow_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_polearm_xp.name',
+                name: "generate.skill_commands.children.increase_polearm_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Polearm | {amount}',
-                description: 'generate.commands.skill_commands.increase_polearm_xp.description',
+                description: "generate.skill_commands.children.increase_polearm_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_polearm_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_polearm_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_crossbow_xp.name',
+                name: "generate.skill_commands.children.increase_crossbow_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Crossbow | {amount}',
-                description: 'generate.commands.skill_commands.increase_crossbow_xp.description',
+                description: "generate.skill_commands.children.increase_crossbow_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_crossbow_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_crossbow_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_smithing_xp.name',
+                name: "generate.skill_commands.children.increase_smithing_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Smithing | {amount}',
-                description: 'generate.commands.skill_commands.increase_smithing_xp.description',
+                description: "generate.skill_commands.children.increase_smithing_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_smithing_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_smithing_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_roguery_xp.name',
+                name: "generate.skill_commands.children.increase_roguery_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Roguery | {amount}',
-                description: 'generate.commands.skill_commands.increase_roguery_xp.description',
+                description: "generate.skill_commands.children.increase_roguery_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_roguery_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_roguery_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_tactics_xp.name',
+                name: "generate.skill_commands.children.increase_tactics_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Tactics | {amount}',
-                description: 'generate.commands.skill_commands.increase_tactics_xp.description',
+                description: "generate.skill_commands.children.increase_tactics_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_tactics_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_tactics_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_scouting_xp.name',
+                name: "generate.skill_commands.children.increase_scouting_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Scouting | {amount}',
-                description: 'generate.commands.skill_commands.increase_scouting_xp.description',
+                description: "generate.skill_commands.children.increase_scouting_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_scouting_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_scouting_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_charm_xp.name',
+                name: "generate.skill_commands.children.increase_charm_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Charm | {amount}',
-                description: 'generate.commands.skill_commands.increase_charm_xp.description',
+                description: "generate.skill_commands.children.increase_charm_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_charm_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_charm_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_leadership_xp.name',
+                name: "generate.skill_commands.children.increase_leadership_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Leadership | {amount}',
-                description: 'generate.commands.skill_commands.increase_leadership_xp.description',
+                description: "generate.skill_commands.children.increase_leadership_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_leadership_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_leadership_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_trade_xp.name',
+                name: "generate.skill_commands.children.increase_trade_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Trade | {amount}',
-                description: 'generate.commands.skill_commands.increase_trade_xp.description',
+                description: "generate.skill_commands.children.increase_trade_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_trade_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_trade_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_steward_xp.name',
+                name: "generate.skill_commands.children.increase_steward_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Steward | {amount}',
-                description: 'generate.commands.skill_commands.increase_steward_xp.description',
+                description: "generate.skill_commands.children.increase_steward_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_steward_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_steward_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_medicine_xp.name',
+                name: "generate.skill_commands.children.increase_medicine_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Medicine | {amount}',
-                description: 'generate.commands.skill_commands.increase_medicine_xp.description',
+                description: "generate.skill_commands.children.increase_medicine_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_medicine_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_medicine_xp.parameters.xp_amount" },
                 ],
             },
             {
-                name: 'generate.commands.skill_commands.increase_engineering_xp.name',
+                name: "generate.skill_commands.children.increase_engineering_xp.title",
                 code: 'campaign.add_skill_xp_to_hero {hero_name} | Engineering | {amount}',
-                description: 'generate.commands.skill_commands.increase_engineering_xp.description',
+                description: "generate.skill_commands.children.increase_engineering_xp.description",
                 params: [
-                    { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
-                    { key: 'amount', default: '99999', label: 'generate.parameters.xp_amount' },
+                    { key: 'hero_name', default: '', label: "generate.skill_commands.children.increase_engineering_xp.parameters.hero_name" },
+                    { key: 'amount', default: '99999', label: "generate.skill_commands.children.increase_engineering_xp.parameters.xp_amount" },
                 ],
             },
         ],
     },
     {
-        name: 'generate.commands.item_commands.title',
+        name: "generate.item_commands.title",
         commands: [
             {
-                name: 'generate.commands.item_commands.give_all_crafting_materials.name',
+                name: "generate.item_commands.children.give_all_crafting_materials.title",
                 code: 'campaign.give_all_crafting_materials_to_main_party {amount}',
-                description: 'generate.commands.item_commands.give_all_crafting_materials.description',
+                description: "generate.item_commands.children.give_all_crafting_materials.description",
                 params: [
-                    { key: 'amount', default: '1000', label: 'generate.parameters.amount' },
+                    { key: 'amount', default: '1000', label: "generate.item_commands.children.give_all_crafting_materials.parameters.amount" },
                 ],
             }
         ]
     },
     {
-        name: 'generate.commands.party_commands.title',
+        name: "generate.party_commands.title",
         commands: [
             {
-                name: 'generate.commands.party_commands.add_troops.name',
+                name: "generate.party_commands.children.add_troops.title",
                 code: 'campaign.add_troops {troop_id} | {amount} | {party_name}',
-                description: 'generate.commands.party_commands.add_troops.description',
+                description: "generate.party_commands.children.add_troops.description",
                 params: [
                     {
                         key: 'troop_id',
-                        label: 'generate.parameters.troop_name',
+                        label: "generate.party_commands.children.add_troops.parameters.troop_id",
                         type: 'select',
-                        options: troops.map(troop => ({ value: troop.id, label: `troops.${troop.id}` })), // 使用 i18n 键
+                        options: troops.map(troop => ({ value: troop.id, label: `troops.${troop.id}` })), // 使用 t 键
                     },
-                    { key: 'amount', default: '50', label: 'generate.parameters.amount', type: 'number' },
-                    { key: 'party_name', default: '', label: 'generate.parameters.party_name', type: 'text' },
+                    { key: 'amount', default: '50', label: "generate.party_commands.children.add_troops.parameters.amount", type: 'number' },
+                    { key: 'party_name', default: '', label: "generate.party_commands.children.add_troops.parameters.party_name", type: 'text' },
                 ],
             },
             {
-                name: 'generate.commands.party_commands.add_companion.name',
+                name: "generate.party_commands.children.add_companion.title",
                 code: 'campaign.add_companion',
-                description: 'generate.commands.party_commands.add_companion.description',
+                description: "generate.party_commands.children.add_companion.description",
             },
             {
-                name: 'generate.commands.party_commands.add_companions.name',
+                name: "generate.party_commands.children.add_companions.title",
                 code: 'campaign.add_companions {amount}',
-                description: 'generate.commands.party_commands.add_companions.description',
+                description: "generate.party_commands.children.add_companions.description",
                 params: [
-                    { key: 'amount', default: '1', label: 'generate.parameters.amount', type: 'number' },
+                    { key: 'amount', default: '1', label: "generate.party_commands.children.add_companions.parameters.amount", type: 'number' },
                 ],
             }
         ],
     },
     {
-        name: 'generate.commands.other_useful_commands.title',
+        name: "generate.other_useful_commands.title",
         commands: [
             {
-                name: 'generate.commands.other_useful_commands.activate_all_policies.name',
+                name: "generate.other_useful_commands.children.activate_all_policies.title",
                 code: 'campaign.activate_all_policies_for_player_kingdom',
-                description: 'generate.commands.other_useful_commands.activate_all_policies.description',
+                description: "generate.other_useful_commands.children.activate_all_policies.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.give_all_settlements.name',
+                name: "generate.other_useful_commands.children.give_all_settlements.title",
                 code: 'campaign.give_settlements_to_player Calradia',
-                description: 'generate.commands.other_useful_commands.give_all_settlements.description',
+                description: "generate.other_useful_commands.children.give_all_settlements.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_caravan_to_hero.name',
+                name: "generate.other_useful_commands.children.add_caravan_to_hero.title",
                 code: 'campaign.add_caravan_to_hero',
-                description: 'generate.commands.other_useful_commands.add_caravan_to_hero.description',
+                description: "generate.other_useful_commands.children.add_caravan_to_hero.description",
                 params: [
                     { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
                 ],
             },
             {
-                name: 'generate.commands.other_useful_commands.add_companion_followers.name',
+                name: "generate.other_useful_commands.children.add_companion_followers.title",
                 code: 'campaign.add_companion',
-                description: 'generate.commands.other_useful_commands.add_companion_followers.description',
+                description: "generate.other_useful_commands.children.add_companion_followers.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_horse_to_hero.name',
+                name: "generate.other_useful_commands.children.add_horse_to_hero.title",
                 code: 'campaign.add_horse',
-                description: 'generate.commands.other_useful_commands.add_horse_to_hero.description',
+                description: "generate.other_useful_commands.children.add_horse_to_hero.description",
                 params: [
                     { key: 'hero_name', default: '', label: 'generate.parameters.hero_name' },
                 ],
             },
             {
-                name: 'generate.commands.other_useful_commands.increase_party_morale.name',
+                name: "generate.other_useful_commands.children.increase_party_morale.title",
                 code: 'campaign.add_morale_to_party',
-                description: 'generate.commands.other_useful_commands.increase_party_morale.description',
+                description: "generate.other_useful_commands.children.increase_party_morale.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_prisoner.name',
+                name: "generate.other_useful_commands.children.add_prisoner.title",
                 code: 'campaign.add_prisoner',
-                description: 'generate.commands.other_useful_commands.add_prisoner.description',
+                description: "generate.other_useful_commands.children.add_prisoner.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_building_progress.name',
+                name: "generate.other_useful_commands.children.add_building_progress.title",
                 code: 'campaign.add_progress_to_current_building',
-                description: 'generate.commands.other_useful_commands.add_building_progress.description',
+                description: "generate.other_useful_commands.children.add_building_progress.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_random_hero_to_party.name',
+                name: "generate.other_useful_commands.children.add_random_hero_to_party.title",
                 code: 'campaign.add_random_hero_to_party',
-                description: 'generate.commands.other_useful_commands.add_random_hero_to_party.description',
+                description: "generate.other_useful_commands.children.add_random_hero_to_party.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_random_prisoner_hero.name',
+                name: "generate.other_useful_commands.children.add_random_prisoner_hero.title",
                 code: 'campaign.add_random_prisoner_hero',
-                description: 'generate.commands.other_useful_commands.add_random_prisoner_hero.description',
+                description: "generate.other_useful_commands.children.add_random_prisoner_hero.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.add_sample_children_to_main_character.name',
+                name: "generate.other_useful_commands.children.add_sample_children_to_main_character.title",
                 code: 'campaign.add_sample_children_to_main_character',
-                description: 'generate.commands.other_useful_commands.add_sample_children_to_main_character.description',
+                description: "generate.other_useful_commands.children.add_sample_children_to_main_character.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.adopt_hero.name',
+                name: "generate.other_useful_commands.children.adopt_hero.title",
                 code: 'campaign.adopt_hero',
-                description: 'generate.commands.other_useful_commands.adopt_hero.description',
+                description: "generate.other_useful_commands.children.adopt_hero.description",
                 params: [
-                    { key: 'hero_id', default: '', label: 'generate.parameters.hero_id' },
+                    { key: 'hero_id', default: '', label: "generate.other_useful_commands.children.adopt_hero.parameters.hero_id" },
                 ],
             },
             {
-                name: 'generate.commands.other_useful_commands.create_player_kingdom.name',
+                name: "generate.other_useful_commands.children.create_player_kingdom.title",
                 code: 'campaign.create_player_kingdom',
-                description: 'generate.commands.other_useful_commands.create_player_kingdom.description',
+                description: "generate.other_useful_commands.children.create_player_kingdom.description",
             },
             {
-                name: 'generate.commands.other_useful_commands.make_peace_with_every_faction.name',
+                name: "generate.other_useful_commands.children.make_peace_with_every_faction.title",
                 code: 'campaign.make_peace_with_every_faction',
-                description: 'generate.commands.other_useful_commands.make_peace_with_every_faction.description',
+                description: "generate.other_useful_commands.children.make_peace_with_every_faction.description",
             },
         ],
     },

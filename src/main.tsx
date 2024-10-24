@@ -6,13 +6,15 @@ import 'virtual:uno.css'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen.ts'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
-import i18next from 'i18next';
-import { initReactI18next } from "react-i18next";
-
-import enTranslations from './locales/en.ts';
-import zhTranslations from './locales/zh.ts';
+import './i18n/config.ts'
+// import i18next from 'i18next';
+// import { initReactI18next } from "react-i18next";
 
 import posthog from 'posthog-js'
+// import { localeTransitions } from './utils/i18n.ts'
+
+// import commonEn from './locales/en-US/common.json'
+// import commonZh from './locales/zh-CN/common.json'
 
 posthog.init('phc_2D7Kb6urVJstiAMsWoMm9LZqGjLIKDE1Du4DJiiYCvR',
   {
@@ -21,18 +23,14 @@ posthog.init('phc_2D7Kb6urVJstiAMsWoMm9LZqGjLIKDE1Du4DJiiYCvR',
   }
 )
 
-i18next.use(initReactI18next).init({
-  lng: 'zh',
-  debug: true,
-  resources: {
-    en: {
-      translation: enTranslations
-    },
-    zh: {
-      translation: zhTranslations
-    }
-  }
-})
+// i18next.use(initReactI18next).init({
+//   debug: true,
+//   ns: Object.keys(localeTransitions),
+//   defaultNS: "zh-CN",
+//   resources: localeTransitions,
+//   lng: 'zh-CN',
+// })
+
 
 
 // Create a new router instance

@@ -1,6 +1,5 @@
-export default {
+{
     "troops": {
-        // 阿塞莱部队
         "aserai_mameluke_guard": "阿塞莱马穆鲁克护卫",
         "aserai_veteran_infantry": "阿塞莱老兵步兵",
         "aserai_master_archer": "阿塞莱大师级弓箭手",
@@ -16,8 +15,6 @@ export default {
         "aserai_militia_archer": "阿塞莱民兵弓箭手",
         "aserai_tribal_horseman": "阿塞莱部族骑兵",
         "aserai_vanguard_faris": "阿塞莱先锋法里斯",
-
-        // 斯特吉亚部队
         "sturgian_horse_raider": "斯特吉亚骑马袭击者",
         "sturgian_veteran_warrior": "斯特吉亚老兵战士",
         "sturgian_veteran_bowman": "斯特吉亚老兵弓箭手",
@@ -32,8 +29,6 @@ export default {
         "sturgian_militia_spearman": "斯特吉亚民兵长矛兵",
         "sturgian_militia_archer": "斯特吉亚民兵弓箭手",
         "sturgian_recruit": "斯特吉亚新兵",
-
-        // 瓦兰迪亚部队
         "vlandian_champion": "瓦兰迪亚冠军骑士",
         "vlandian_gallant": "瓦兰迪亚英勇骑士",
         "vlandian_vanguard": "瓦兰迪亚先锋骑士",
@@ -48,8 +43,6 @@ export default {
         "vlandian_militia_spearman": "瓦兰迪亚民兵长矛兵",
         "vlandian_militia_archer": "瓦兰迪亚民兵弓箭手",
         "vlandian_recruit": "瓦兰迪亚新兵",
-
-        // 库赛特部队
         "khuzait_heavy_lancer": "库赛特重装枪骑兵",
         "khuzait_heavy_horse_archer": "库赛特重装马弓手",
         "khuzait_darkhan": "库赛特达尔罕",
@@ -61,8 +54,6 @@ export default {
         "khuzait_hunter": "库赛特猎人",
         "khuzait_nomad": "库赛特游牧民",
         "khuzait_khans_guard": "库赛特可汗卫士",
-
-        // 帝国部队
         "imperial_elite_cataphract": "帝国精英具装骑兵",
         "imperial_cataphract": "帝国铁甲骑兵",
         "imperial_legionary": "帝国军团士兵",
@@ -79,8 +70,6 @@ export default {
         "imperial_militia_spearman": "帝国民兵长矛兵",
         "imperial_militia_archer": "帝国民兵弓箭手",
         "imperial_recruit": "帝国新兵",
-
-        // 巴旦尼亚部队
         "battanian_wildling": "巴旦尼亚野性战士",
         "battanian_oathsworn": "巴旦尼亚誓言守卫",
         "battanian_picked_warrior": "巴旦尼亚精锐战士",
@@ -94,53 +83,53 @@ export default {
         "battanian_volunteer": "巴旦尼亚志愿者",
         "battanian_fian_champion": "巴旦尼亚费奥纳冠军",
         "battanian_fian": "巴旦尼亚费奥纳勇士",
-
-        // 强盗和其他部队
         "desert_bandits_bandit": "沙漠强盗",
         "desert_bandits_raider": "沙漠袭击者",
         "desert_bandits_chief": "沙漠强盗头目",
         "desert_bandits_boss": "沙漠强盗首领",
-
         "steppe_bandits_bandit": "草原强盗",
         "steppe_bandits_raider": "草原袭击者",
         "steppe_bandits_chief": "草原强盗头目",
         "steppe_bandits_boss": "草原强盗首领",
-
         "forest_bandits_bandit": "森林强盗",
         "forest_bandits_raider": "森林袭击者",
         "forest_bandits_chief": "森林强盗头目",
         "forest_bandits_boss": "森林强盗首领",
-
         "mountain_bandits_bandit": "山贼",
         "mountain_bandits_raider": "山地袭击者",
         "mountain_bandits_chief": "山贼头目",
         "mountain_bandits_boss": "山贼首领",
-
         "sea_raider_bandit": "海寇",
         "sea_raiders_raider": "海袭者",
         "sea_raiders_chief": "海寇头目",
-        "sea_raiders_boss": "海寇首领",
+        "sea_raiders_boss": "海寇首领"
     },
     "header": {
         "mount_blade_title": "Mount&Blade II 控制台生成器",
+        "theme_mode": "主题模式"
     },
     "preparation": {
         "pre_preparation": "预准备",
         "open_console": "打开控制台的默认快捷键是",
         "enable_cheat": "启用作弊",
-        "disable_cheat": "禁用作弊",
+        "disable_cheat": "禁用作弊"
     },
     "copy_message": "指令已复制到剪贴板",
     "generate": {
         "generator": "生成器",
         "global_search": "全局搜索",
         "search_all": "搜索所有指令",
+        "global_search_placeholder": "搜索所有指令...",
         "select_category": "选择分类",
         "select_command": "选择指令",
         "search_command": "搜索指令",
+        "search_command_placeholder": "搜索指令...",
         "generated_command": "生成的指令",
-
-        // Console Settings Category
+        "no_match_command": "未找到匹配的指令。",
+        "input_parameters": "输入参数",
+        "select_culture": "选择文化",
+        "select_troop": "选择部队",
+        "select_placeholder": "选择 {{label}}",
         "console_settings": {
             "title": "控制台设置",
             "children": {
@@ -151,16 +140,14 @@ export default {
                 },
                 "enable_cheat": {
                     "title": "启用作弊",
-                    "description": "在控制台中启用作弊模式，无需重启游戏。",
+                    "description": "在控制台中启用作弊模式，无需重启游戏。"
                 },
                 "disable_cheat": {
                     "title": "禁用作弊",
-                    "description": "在控制台中禁用作弊模式，无需重启游戏。",
-                },
+                    "description": "在控制台中禁用作弊模式，无需重启游戏。"
+                }
             }
         },
-
-        // Map Commands Category
         "map_commands": {
             "title": "地图命令",
             "children": {
@@ -171,47 +158,43 @@ export default {
                 },
                 "show_on_map_troops": {
                     "title": "在地图上显示所有部队",
-                    "description": "在地图上显示所有部队，前提是你第一次看到过这个队伍，否则将无法正常显示。通过将1变为0代表关闭显示地图上所有部队。",
-                },
+                    "description": "在地图上显示所有部队，前提是你第一次看到过这个队伍，否则将无法正常显示。通过将1变为0代表关闭显示地图上所有部队。"
+                }
             }
         },
-
-        // Combat Commands Category
         "combat_commands": {
             "title": "战斗命令",
             "children": {
                 "heal_self": {
                     "title": "治疗自己",
-                    "description": "在战斗中将自己治疗至100%生命值。",
+                    "description": "在战斗中将自己治疗至100%生命值。"
                 },
                 "heal_horse": {
                     "title": "治疗马匹",
-                    "description": "在战斗中将你的马治疗至满血。",
+                    "description": "在战斗中将你的马治疗至满血。"
                 },
                 "knock_down_one_enemy": {
                     "title": "击倒一个敌人",
-                    "description": "在战场上击倒一个敌人。",
+                    "description": "在战场上击倒一个敌人。"
                 },
                 "knock_down_all_enemies": {
                     "title": "击倒所有敌人",
-                    "description": "在战场上击倒所有敌人。",
+                    "description": "在战场上击倒所有敌人。"
                 },
                 "knock_down_one_ally": {
                     "title": "击倒一个友军",
-                    "description": "在战场上击倒你的一名士兵。",
+                    "description": "在战场上击倒你的一名士兵。"
                 },
                 "knock_down_all_allies": {
                     "title": "击倒所有友军",
-                    "description": "在战场上击倒你所有的士兵。",
+                    "description": "在战场上击倒你所有的士兵。"
                 },
                 "knock_down_self": {
                     "title": "击倒自己",
-                    "description": "在战场上击倒自己。",
-                },
+                    "description": "在战场上击倒自己。"
+                }
             }
         },
-
-        // Commands to Add Gold, Skill Points, Relationships, etc.
         "add_gold_skill_points_relationships": {
             "title": "添加金币、技能点、关系等命令",
             "children": {
@@ -285,8 +268,6 @@ export default {
                 }
             }
         },
-
-        // Skill Commands Category
         "skill_commands": {
             "title": "技能命令",
             "children": {
@@ -433,11 +414,9 @@ export default {
                         "hero_name": "英雄名称（省略为空时为自己）",
                         "xp_amount": "经验值数量"
                     }
-                },
+                }
             }
         },
-
-        // Item Commands Category
         "item_commands": {
             "title": "物品命令",
             "children": {
@@ -450,8 +429,6 @@ export default {
                 }
             }
         },
-
-        // Party Commands Category
         "party_commands": {
             "title": "队伍命令",
             "children": {
@@ -478,18 +455,16 @@ export default {
                 }
             }
         },
-
-        // Other Useful Commands Category
         "other_useful_commands": {
             "title": "其他有用的命令",
             "children": {
                 "activate_all_policies": {
                     "title": "激活所有政策",
-                    "description": "为玩家的王国激活所有政策。",
+                    "description": "为玩家的王国激活所有政策。"
                 },
                 "give_all_settlements": {
                     "title": "给予玩家所有城镇和要塞",
-                    "description": "给予玩家所有城镇和要塞。",
+                    "description": "给予玩家所有城镇和要塞。"
                 },
                 "add_caravan_to_hero": {
                     "title": "为指定英雄添加商队",
@@ -556,8 +531,8 @@ export default {
                     "title": "与所有派系和平",
                     "description": "与所有派系和平，清除你的犯罪记录。",
                     "parameters": {}
-                },
+                }
             }
-        },
+        }
     }
-};
+}

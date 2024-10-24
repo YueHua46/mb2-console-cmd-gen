@@ -1,6 +1,5 @@
-export default {
+{
     "troops": {
-        // 阿塞莱部队
         "aserai_mameluke_guard": "Aserai Mamluke Guard",
         "aserai_veteran_infantry": "Aserai Veteran Infantry",
         "aserai_master_archer": "Aserai Master Archer",
@@ -16,8 +15,6 @@ export default {
         "aserai_militia_archer": "Aserai Militia Archer",
         "aserai_tribal_horseman": "Aserai Tribal Horseman",
         "aserai_vanguard_faris": "Aserai Vanguard Faris",
-
-        // 斯特吉亚部队
         "sturgian_horse_raider": "Sturgian Horse Raider",
         "sturgian_veteran_warrior": "Sturgian Veteran Warrior",
         "sturgian_veteran_bowman": "Sturgian Veteran Bowman",
@@ -32,8 +29,6 @@ export default {
         "sturgian_militia_spearman": "Sturgian Militia Spearman",
         "sturgian_militia_archer": "Sturgian Militia Archer",
         "sturgian_recruit": "Sturgian Recruit",
-
-        // 瓦兰迪亚部队
         "vlandian_champion": "Vlandian Champion Knight",
         "vlandian_gallant": "Vlandian Gallant Knight",
         "vlandian_vanguard": "Vlandian Vanguard Knight",
@@ -48,8 +43,6 @@ export default {
         "vlandian_militia_spearman": "Vlandian Militia Spearman",
         "vlandian_militia_archer": "Vlandian Militia Archer",
         "vlandian_recruit": "Vlandian Recruit",
-
-        // 库赛特部队
         "khuzait_heavy_lancer": "Khuzait Heavy Lancer",
         "khuzait_heavy_horse_archer": "Khuzait Heavy Horse Archer",
         "khuzait_darkhan": "Khuzait Darkhan",
@@ -61,8 +54,6 @@ export default {
         "khuzait_hunter": "Khuzait Hunter",
         "khuzait_nomad": "Khuzait Nomad",
         "khuzait_khans_guard": "Khuzait Khan's Guard",
-
-        // 帝国部队
         "imperial_elite_cataphract": "Imperial Elite Cataphract",
         "imperial_cataphract": "Imperial Cataphract",
         "imperial_legionary": "Imperial Legionary",
@@ -79,8 +70,6 @@ export default {
         "imperial_militia_spearman": "Imperial Militia Spearman",
         "imperial_militia_archer": "Imperial Militia Archer",
         "imperial_recruit": "Imperial Recruit",
-
-        // 巴旦尼亚部队
         "battanian_wildling": "Battanian Wildling",
         "battanian_oathsworn": "Battanian Oathsworn Guard",
         "battanian_picked_warrior": "Battanian Picked Warrior",
@@ -94,53 +83,53 @@ export default {
         "battanian_volunteer": "Battanian Volunteer",
         "battanian_fian_champion": "Battanian Fian Champion",
         "battanian_fian": "Battanian Fian Warrior",
-
-        // 强盗和其他部队
         "desert_bandits_bandit": "Desert Bandit",
         "desert_bandits_raider": "Desert Raider",
         "desert_bandits_chief": "Desert Bandit Chief",
         "desert_bandits_boss": "Desert Bandit Boss",
-
         "steppe_bandits_bandit": "Steppe Bandit",
         "steppe_bandits_raider": "Steppe Raider",
         "steppe_bandits_chief": "Steppe Bandit Chief",
         "steppe_bandits_boss": "Steppe Bandit Boss",
-
         "forest_bandits_bandit": "Forest Bandit",
         "forest_bandits_raider": "Forest Raider",
         "forest_bandits_chief": "Forest Bandit Chief",
         "forest_bandits_boss": "Forest Bandit Boss",
-
         "mountain_bandits_bandit": "Mountain Bandit",
         "mountain_bandits_raider": "Mountain Raider",
         "mountain_bandits_chief": "Mountain Bandit Chief",
         "mountain_bandits_boss": "Mountain Bandit Boss",
-
         "sea_raider_bandit": "Sea Raider Bandit",
         "sea_raiders_raider": "Sea Raiders Raider",
         "sea_raiders_chief": "Sea Raiders Chief",
-        "sea_raiders_boss": "Sea Raiders Boss",
+        "sea_raiders_boss": "Sea Raiders Boss"
     },
     "header": {
         "mount_blade_title": "Mount&Blade II Console Generate",
+        "theme_mode": "Theme Mode"
     },
     "preparation": {
         "pre_preparation": "Pre-preparation",
         "open_console": "The default key for opening the console is",
         "enable_cheat": "Enable Cheat",
-        "disable_cheat": "Disable Cheat",
+        "disable_cheat": "Disable Cheat"
     },
     "copy_message": "Command has been copied to the clipboard",
     "generate": {
         "generator": "Generator",
         "global_search": "Global Search",
+        "global_search_placeholder": "Search all commands...",
         "search_all": "Search All Commands",
         "select_category": "Select Category",
         "select_command": "Select Command",
         "search_command": "Search Command",
+        "search_command_placeholder": "Search command...",
         "generated_command": "Generated Command",
-
-        // Console Settings Category
+        "no_match_command": "No matching command found.",
+        "input_parameters": "Input Parameters",
+        "select_culture": "Select Culture",
+        "select_troop": "Select Troop",
+        "select_placeholder": "Select {{label}}",
         "console_settings": {
             "title": "Console Settings",
             "children": {
@@ -151,16 +140,14 @@ export default {
                 },
                 "enable_cheat": {
                     "title": "Enable Cheat",
-                    "description": "Enable cheat mode in the console without restarting the game.",
+                    "description": "Enable cheat mode in the console without restarting the game."
                 },
                 "disable_cheat": {
                     "title": "Disable Cheat",
-                    "description": "Disable cheat mode in the console without restarting the game.",
-                },
+                    "description": "Disable cheat mode in the console without restarting the game."
+                }
             }
         },
-
-        // Map Commands Category
         "map_commands": {
             "title": "Map Commands",
             "children": {
@@ -171,47 +158,43 @@ export default {
                 },
                 "show_on_map_troops": {
                     "title": "Show All Troops on Map",
-                    "description": "Show all troops on the map, provided that you have seen the troop for the first time; otherwise, it will not be displayed correctly. Set 1 to 0 to turn off the display of all troops on the map.",
-                },
+                    "description": "Show all troops on the map, provided that you have seen the troop for the first time; otherwise, it will not be displayed correctly. Set 1 to 0 to turn off the display of all troops on the map."
+                }
             }
         },
-
-        // Combat Commands Category
         "combat_commands": {
             "title": "Combat Commands",
             "children": {
                 "heal_self": {
                     "title": "Heal Self",
-                    "description": "In battle, heal yourself to 100% health.",
+                    "description": "In battle, heal yourself to 100% health."
                 },
                 "heal_horse": {
                     "title": "Heal Horse",
-                    "description": "In battle, heal your horse to full health.",
+                    "description": "In battle, heal your horse to full health."
                 },
                 "knock_down_one_enemy": {
                     "title": "Knock Down One Enemy",
-                    "description": "Knock down one enemy on the battlefield.",
+                    "description": "Knock down one enemy on the battlefield."
                 },
                 "knock_down_all_enemies": {
                     "title": "Knock Down All Enemies",
-                    "description": "Knock down all enemies on the battlefield.",
+                    "description": "Knock down all enemies on the battlefield."
                 },
                 "knock_down_one_ally": {
                     "title": "Knock Down One Ally",
-                    "description": "Knock down one of your soldiers on the battlefield.",
+                    "description": "Knock down one of your soldiers on the battlefield."
                 },
                 "knock_down_all_allies": {
                     "title": "Knock Down All Allies",
-                    "description": "Knock down all your soldiers on the battlefield.",
+                    "description": "Knock down all your soldiers on the battlefield."
                 },
                 "knock_down_self": {
                     "title": "Knock Down Self",
-                    "description": "Knock yourself down on the battlefield.",
-                },
+                    "description": "Knock yourself down on the battlefield."
+                }
             }
         },
-
-        // Commands to Add Gold, Skill Points, Relationships, etc.
         "add_gold_skill_points_relationships": {
             "title": "Commands to Add Gold, Skill Points, Relationships, etc.",
             "children": {
@@ -285,8 +268,6 @@ export default {
                 }
             }
         },
-
-        // Skill Commands Category
         "skill_commands": {
             "title": "Skill Commands",
             "children": {
@@ -433,11 +414,9 @@ export default {
                         "hero_name": "Hero name (leave empty for self)",
                         "xp_amount": "Experience points amount"
                     }
-                },
+                }
             }
         },
-
-        // Item Commands Category
         "item_commands": {
             "title": "Item Commands",
             "children": {
@@ -450,8 +429,6 @@ export default {
                 }
             }
         },
-
-        // Party Commands Category
         "party_commands": {
             "title": "Party Commands",
             "children": {
@@ -478,18 +455,16 @@ export default {
                 }
             }
         },
-
-        // Other Useful Commands Category
         "other_useful_commands": {
             "title": "Other Useful Commands",
             "children": {
                 "activate_all_policies": {
                     "title": "Activate All Policies",
-                    "description": "Activate all policies for the player's kingdom.",
+                    "description": "Activate all policies for the player's kingdom."
                 },
                 "give_all_settlements": {
                     "title": "Give All Settlements and Fortresses to Player",
-                    "description": "Give all settlements and fortresses to the player.",
+                    "description": "Give all settlements and fortresses to the player."
                 },
                 "add_caravan_to_hero": {
                     "title": "Add Caravan to Hero",
@@ -556,8 +531,8 @@ export default {
                     "title": "Make Peace with Every Faction",
                     "description": "Make peace with all factions and clear your criminal record.",
                     "parameters": {}
-                },
+                }
             }
-        },
+        }
     }
-};
+}
