@@ -363,7 +363,7 @@ export const categories: Category[] = [
                         key: 'troop_id',
                         label: "generate.party_commands.children.add_troops.parameters.troop_id",
                         type: 'select',
-                        options: troops.map(troop => ({ value: troop.id, label: `troops.${troop.id}` })), // 使用 t 键
+                        options: troops.map(troop => ({ value: troop.value, label: troop.label })),
                     },
                     { key: 'amount', default: '50', label: "generate.party_commands.children.add_troops.parameters.amount", type: 'number' },
                     { key: 'party_name', default: '', label: "generate.party_commands.children.add_troops.parameters.party_name", type: 'text' },
