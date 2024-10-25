@@ -1,8 +1,7 @@
 // import { ModeToggle } from "@/components/mode-trigger";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ModeToggle } from "@/components/mode-trigger";
 import { useTranslation } from "react-i18next";
-
+import LanguageSwitcher from "@/components/language-switcher";
 export default function Header() {
 
     const { t } = useTranslation("common");

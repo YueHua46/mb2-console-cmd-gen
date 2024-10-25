@@ -1,4 +1,8 @@
 {
+    "feedback": {
+        "title": "Feedback",
+        "description": "If you encounter any issues while using the generator, please contact me through the following methods, and I will respond to you as soon as possible."
+    },
     "culture": {
         "aserai": "Aserai",
         "sturgian": "Sturgian",
