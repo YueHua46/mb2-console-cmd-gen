@@ -19,7 +19,7 @@ import posthog from 'posthog-js'
 posthog.init('phc_2D7Kb6urVJstiAMsWoMm9LZqGjLIKDE1Du4DJiiYCvR',
   {
     api_host: 'https://us.i.posthog.com',
-    person_profiles: 'always' // or 'always' to create profiles for anonymous users as well
+    person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
   }
 )
 

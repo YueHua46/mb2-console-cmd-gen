@@ -1,4 +1,5 @@
 import App from '@/App'
+import PostHogPageView from '@/components/posthog-pageview'
 import { Toaster } from '@/components/tosater'
 import Header from '@/layout/header'
 import Main from '@/layout/main'
@@ -28,6 +29,7 @@ export const Route = createRootRoute({
                 <TanStackRouterDevtools />
             </Suspense>
             <Toaster />
+            <PostHogPageView />
         </App>
     ),
 })
