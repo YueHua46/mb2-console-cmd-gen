@@ -1,4 +1,17 @@
 {
+    "culture": {
+        "aserai": "Aserai",
+        "sturgian": "Sturgian",
+        "vlandian": "Vlandian",
+        "khuzait": "Khuzait",
+        "imperial": "Imperial",
+        "battanian": "Battanian",
+        "desert_bandits": "Desert Bandits",
+        "steppe_bandits": "Steppe Bandits",
+        "forest_bandits": "Forest Bandits",
+        "mountain_bandits": "Mountain Bandits",
+        "sea_raiders": "Sea Raiders"
+    },
     "troops": {
         "aserai_mameluke_guard": "Aserai Mamluke Guard",
         "aserai_veteran_infantry": "Aserai Veteran Infantry",

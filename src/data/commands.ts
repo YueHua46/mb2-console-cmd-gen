@@ -24,12 +24,12 @@ export const categories: Category[] = [
             },
             {
                 name: "generate.console_settings.children.enable_cheat.title",
-                code: 'cheat_mode 1', // 固定命令，不需要翻译
+                code: 'config.cheat_mode 1', // 固定命令，不需要翻译
                 description: "generate.console_settings.children.enable_cheat.description",
             },
             {
                 name: "generate.console_settings.children.disable_cheat.title",
-                code: 'cheat_mode 0', // 固定命令，不需要翻译
+                code: 'config.cheat_mode 0', // 固定命令，不需要翻译
                 description: "generate.console_settings.children.disable_cheat.description",
             },
         ],

@@ -236,7 +236,8 @@ const CommandGenerator: React.FC = () => {
                                                                 <SelectContent>
                                                                     {cultures.map((culture) => (
                                                                         <SelectItem key={culture} value={culture}>
-                                                                            {culture}
+                                                                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                                                            {t(culture as any)}
                                                                         </SelectItem>
                                                                     ))}
                                                                 </SelectContent>
@@ -280,7 +281,8 @@ const CommandGenerator: React.FC = () => {
                                                                 <option value=''>{t("generate.select_placeholder", { label: param.label })}</option>
                                                                 {param.options.map((option) => (
                                                                     <option key={option.value} value={option.value}>
-                                                                        {option.label}
+                                                                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                                                        {t(option.label as any)}
                                                                     </option>
                                                                 ))}
                                                             </select>

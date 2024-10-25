@@ -2,6 +2,19 @@
     "page": {
         "title": "骑马与砍杀2霸主 - 控制台指令生成器"
     },
+    "culture": {
+        "aserai": "阿塞莱",
+        "sturgian": "斯特吉亚",
+        "vlandian": "瓦兰迪亚",
+        "khuzait": "库赛特",
+        "imperial": "帝国",
+        "battanian": "巴旦尼亚",
+        "desert_bandits": "沙漠强盗",
+        "steppe_bandits": "草原强盗",
+        "forest_bandits": "森林强盗",
+        "mountain_bandits": "山贼",
+        "sea_raiders": "海寇"
+    },
     "troops": {
         "aserai_mameluke_guard": "阿塞莱马穆鲁克护卫",
         "aserai_veteran_infantry": "阿塞莱老兵步兵",
