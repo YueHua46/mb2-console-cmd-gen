@@ -274,9 +274,10 @@ const CommandGenerator: React.FC = () => {
                                                                         {troops
                                                                             .filter((troop) => troop.culture === selectedCulture)
                                                                             .map((troop) => (
-                                                                                <SelectItem key={troop.id} value={troop.id}>
+                                                                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                                                <SelectItem key={troop.value} value={troop.value}>
                                                                                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                                                                                    {t(troop.id as any)}
+                                                                                    {t(troop.label as any)}
                                                                                 </SelectItem>
                                                                             ))}
                                                                     </SelectContent>
