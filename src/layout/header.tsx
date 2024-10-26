@@ -5,7 +5,7 @@ import LanguageSwitcher from "@/components/language-switcher";
 export default function Header() {
 
     const { t } = useTranslation("common");
-
+ 
     return (
         <header className="bg-background shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
