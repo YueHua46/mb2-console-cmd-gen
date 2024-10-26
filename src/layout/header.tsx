@@ -6,6 +6,10 @@ export default function Header() {
 
     const { t } = useTranslation("common");
 
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("do something")
+    })
+
     return (
         <header className="bg-background shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
