@@ -14,7 +14,7 @@ const resources = {
 } as const;
 
 i18next.use(initReactI18next).init({
-    lng: "en",
+    lng: "zh-CN",
     ns: ["common"],
     defaultNS,
     resources,

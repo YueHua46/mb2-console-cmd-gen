@@ -10,6 +10,7 @@ import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { cultures, troops } from '@/data/troops';
 import { useTranslation } from 'react-i18next';
+import { usePostHog } from 'posthog-js/react';
 
 const CommandGenerator: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
@@ -19,6 +20,8 @@ const CommandGenerator: React.FC = () => {
     const [selectedCulture, setSelectedCulture] = useState<string>('');
     const [selectedTroop, setSelectedTroop] = useState<string>('');
     const [globalSearchTerm, setGlobalSearchTerm] = useState<string>('');
+
+    const posthog = usePostHog()
 
     const { t } = useTranslation("common");
 
@@ -30,6 +33,10 @@ const CommandGenerator: React.FC = () => {
         setSelectedCulture('');
         setSelectedTroop('');
         setGlobalSearchTerm('');
+
+        posthog.capture('$category_select', {
+            '$category': category.name
+        })
     };
 
     const handleCommandSelect = (command: Command) => {
@@ -48,6 +55,10 @@ const CommandGenerator: React.FC = () => {
         setParams(initialParams);
         setSelectedCulture(''); // 重置文化选择
         setSelectedTroop('');
+
+        posthog.capture('$command_select', {
+            '$command': command.name
+        })
     };
 
     // 处理参数变化
@@ -78,6 +89,11 @@ const CommandGenerator: React.FC = () => {
 
         // 清理多余的空格
         cmd = cmd.replace(/\s{2,}/g, ' ').trim();
+
+        posthog.capture('$command_generate', {
+            '$command': command.name,
+            '$command_code': cmd
+        })
 
         return cmd;
     };
@@ -236,7 +252,8 @@ const CommandGenerator: React.FC = () => {
                                                                 <SelectContent>
                                                                     {cultures.map((culture) => (
                                                                         <SelectItem key={culture} value={culture}>
-                                                                            {culture}
+                                                                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                                                            {t(culture as any)}
                                                                         </SelectItem>
                                                                     ))}
                                                                 </SelectContent>
@@ -257,8 +274,10 @@ const CommandGenerator: React.FC = () => {
                                                                         {troops
                                                                             .filter((troop) => troop.culture === selectedCulture)
                                                                             .map((troop) => (
-                                                                                <SelectItem key={troop.id} value={troop.id}>
-                                                                                    {t(troop.id as any)}
+                                                                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                                                <SelectItem key={troop.value} value={troop.value}>
+                                                                                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                                                                    {t(troop.label as any)}
                                                                                 </SelectItem>
                                                                             ))}
                                                                     </SelectContent>
@@ -279,7 +298,8 @@ const CommandGenerator: React.FC = () => {
                                                                 <option value=''>{t("generate.select_placeholder", { label: param.label })}</option>
                                                                 {param.options.map((option) => (
                                                                     <option key={option.value} value={option.value}>
-                                                                        {option.label}
+                                                                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                                                        {t(option.label as any)}
                                                                     </option>
                                                                 ))}
                                                             </select>

@@ -9,7 +9,7 @@ interface GlobalActions {
 }
 
 const defaultGlobalState: GlobalState = {
-    language: "en-US",
+    language: "",
 }
 
 const useGlobalStore = create<GlobalState & GlobalActions>()(persist((set) => ({

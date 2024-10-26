@@ -2,6 +2,7 @@
 import { useToast } from '@/hooks/useToast';
 import { copyToClipboard } from '@/lib/utils';
 import { CopyIcon } from '@radix-ui/react-icons';
+import { usePostHog } from 'posthog-js/react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +14,7 @@ interface CodeBlockProps {
 const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '' }) => {
     const { toast } = useToast();
     const { t } = useTranslation("common");
-
+    const posthog = usePostHog()
 
     const handleCopy = () => {
         copyToClipboard(children as string);
@@ -21,6 +22,10 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '' }) => {
             title: t("copy_message"),
             description: t("copy_message"),
         });
+
+        posthog.capture('$code_copy', {
+            '$code': children as string
+        })
     };
 
     return (

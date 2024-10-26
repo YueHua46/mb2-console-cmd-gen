@@ -8,9 +8,21 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "@/components/theme-provider"
+import { usePostHog } from "posthog-js/react"
+
+type Theme = "light" | "dark" | "system"
 
 export function ModeToggle() {
     const { setTheme } = useTheme()
+
+    const posthog = usePostHog()
+
+    const handleChange = (value: Theme) => {
+        setTheme(value)
+        posthog.capture('$theme_change', {
+            '$theme': value
+        })
+    }
 
     return (
         <DropdownMenu>
@@ -22,13 +34,13 @@ export function ModeToggle() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
+                <DropdownMenuItem onClick={() => handleChange("light")}>
                     Light
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <DropdownMenuItem onClick={() => handleChange("dark")}>
                     Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
+                <DropdownMenuItem onClick={() => handleChange("system")}>
                     System
                 </DropdownMenuItem>
             </DropdownMenuContent>

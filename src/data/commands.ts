@@ -24,12 +24,12 @@ export const categories: Category[] = [
             },
             {
                 name: "generate.console_settings.children.enable_cheat.title",
-                code: 'cheat_mode 1', // 固定命令，不需要翻译
+                code: 'config.cheat_mode 1', // 固定命令，不需要翻译
                 description: "generate.console_settings.children.enable_cheat.description",
             },
             {
                 name: "generate.console_settings.children.disable_cheat.title",
-                code: 'cheat_mode 0', // 固定命令，不需要翻译
+                code: 'config.cheat_mode 0', // 固定命令，不需要翻译
                 description: "generate.console_settings.children.disable_cheat.description",
             },
         ],
@@ -363,7 +363,7 @@ export const categories: Category[] = [
                         key: 'troop_id',
                         label: "generate.party_commands.children.add_troops.parameters.troop_id",
                         type: 'select',
-                        options: troops.map(troop => ({ value: troop.id, label: `troops.${troop.id}` })), // 使用 t 键
+                        options: troops.map(troop => ({ value: troop.value, label: troop.label })),
                     },
                     { key: 'amount', default: '50', label: "generate.party_commands.children.add_troops.parameters.amount", type: 'number' },
                     { key: 'party_name', default: '', label: "generate.party_commands.children.add_troops.parameters.party_name", type: 'text' },

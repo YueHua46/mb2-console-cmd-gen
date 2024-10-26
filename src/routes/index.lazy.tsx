@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { createLazyFileRoute } from '@tanstack/react-router';
 import CommandGenerator from '@/components/command-generator';
 import { useTranslation } from 'react-i18next';
+import Feedback from '@/components/feedback';
 export const Route = createLazyFileRoute('/')({
     component: Index,
 });
@@ -39,6 +40,9 @@ function Index() {
 
             {/* 命令生成器卡片 */}
             <CommandGenerator />
+
+            {/* 问题反馈卡片 */}
+            <Feedback />
         </div>
     );
 }
