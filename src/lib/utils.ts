@@ -22,3 +22,9 @@ export function copyToClipboard(text: string) {
     document.body.removeChild(textarea);
   }
 }
+
+// 获取用户浏览器主题模式
+export function getThemeMode() {
+  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return isDarkMode ? 'dark' : 'light';
+}

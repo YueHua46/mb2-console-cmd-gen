@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import useGlobalStore from "./store/global";
 import { ThemeProvider } from "./components/theme-provider";
 import { t } from "i18next";
+import { getThemeMode } from "./lib/utils";
 
 function App({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
@@ -23,7 +24,7 @@ function App({ children }: { children: React.ReactNode }) {
   }, [language])
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme={getThemeMode()} storageKey="vite-ui-theme">
       {children}
     </ThemeProvider>
   )
